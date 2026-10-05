@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>С Днём учителя!</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Neucha&family=Nunito:wght@400;600;800&family=Cormorant+Garamond:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#fbf4e8;--paper2:#f4e8d3;--ink:#4a3a30;--soft:#8a7566;--peach:#f7a072;--peach-d:#e07a4a;--peach-l:#fde3d2;--line:#e6d5bc;
+color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 17px/1.55 Nunito,system-ui,sans-serif;
+background-image:radial-gradient(var(--line) 1px,transparent 1px);background-size:22px 22px}
+.wrap{max-width:1080px;margin:0 auto;padding:20px 16px 40px}
+h1,h2,.hand{font-family:Neucha,"Comic Sans MS",cursive;font-weight:400}
+.greeting{margin:12px auto 22px;color:var(--peach-d);font:400 24px/1.35 Neucha,cursive;animation:greeting-in .9s ease-out both}
+@keyframes greeting-in{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+header{text-align:center;padding:32px 0 8px}
+h1{font-size:clamp(34px,7vw,60px);line-height:1.1;margin:0 0 10px}
+header p{max-width:560px;margin:0 auto 22px;color:var(--soft)}
+.party{font:800 17px Nunito,sans-serif;background:var(--peach);color:#fff;border:0;border-radius:999px;padding:14px 30px;cursor:pointer;box-shadow:0 4px 0 var(--peach-d);transition:transform .1s,box-shadow .1s}
+.party:active{transform:translateY(3px);box-shadow:0 1px 0 var(--peach-d)}
+.party-controls{display:flex;justify-content:center;align-items:center;gap:10px;flex-wrap:wrap}
+.music-stop{font:600 14px Nunito,sans-serif;color:var(--soft);background:transparent;border:1px solid var(--line);border-radius:999px;padding:8px 14px;cursor:pointer}
+.music-stop[hidden]{display:none}
+.party:focus-visible,.music-stop:focus-visible,.chip:focus-visible,input:focus-visible,.card:focus-visible{outline:3px solid var(--peach-d);outline-offset:3px}
+.tools{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--paper);padding:12px 0;margin-top:18px;border-bottom:1px solid var(--line)}
+input{width:100%;font:inherit;padding:12px 16px;border-radius:12px;border:2px solid var(--line);background:#fff;color:var(--ink)}
+input:focus{border-color:var(--peach)}
+.chips{display:flex;gap:8px;overflow-x:auto;padding:10px 0 2px;scrollbar-width:none}
+.chip{flex:none;font:600 14px Nunito,sans-serif;padding:7px 14px;border-radius:999px;border:2px solid var(--line);background:#fff;color:var(--ink);cursor:pointer}
+.chip[aria-pressed=true]{background:var(--peach-l);border-color:var(--peach);color:var(--peach-d)}
+section.group{margin-top:36px;content-visibility:auto;contain-intrinsic-size:auto 400px}
+h2{font-size:30px;margin:0 0 14px;display:flex;align-items:baseline;gap:10px}
+h2 small{font:600 14px Nunito,sans-serif;color:var(--soft)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:18px}
+.card{perspective:900px;height:300px;cursor:pointer;border-radius:16px}
+.inner{position:relative;width:100%;height:100%;transition:transform .55s cubic-bezier(.3,.7,.3,1);transform-style:preserve-3d}
+.card.flip .inner{transform:rotateY(180deg)}
+
+.face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:16px;overflow:hidden;border:2px solid var(--line);box-shadow:4px 4px 0 var(--paper2);background:#fffdf8}
+.front img,.ph{width:100%;height:100%;display:block;object-fit:cover}
+.ph{display:grid;place-items:center;background:var(--peach-l);font:400 64px Neucha,cursive;color:var(--peach-d)}
+.back{transform:rotateY(180deg);background:var(--peach-l);border-color:var(--peach);padding:20px 18px;display:flex;flex-direction:column;text-align:center}
+.back .name{font:400 24px/1.15 Neucha,cursive;color:var(--peach-d);margin:0 0 4px}
+.back .subj{font-size:13px;color:var(--soft);margin-bottom:12px}
+.back p{margin:0;font-size:15px;line-height:1.5;overflow:auto;flex:1}
+.ads{margin-top:56px}
+.ads>h2{font-size:22px;color:var(--soft)}
+.adgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.banner{display:flex;gap:14px;align-items:center;padding:18px;border-radius:16px;text-decoration:none;color:inherit;text-align:left;cursor:pointer;font:inherit;width:100%;transition:transform .15s}
+.banner:hover{transform:translateY(-3px)}
+.banner:focus-visible{outline:3px solid var(--peach-d);outline-offset:3px}
+.bic{flex:none;width:60px;height:60px;border-radius:14px;display:grid;place-items:center;font-size:32px;overflow:hidden}
+.bic img{width:100%;height:100%;object-fit:cover}
+.bt{font-size:14px;line-height:1.4}
+.bt b{display:block;font-size:20px;margin-bottom:2px}
+.b-gold{background:linear-gradient(135deg,#fbf0d0,#f1d98f);border:3px double #b8892b;color:#4a3210;font-family:'Cormorant Garamond',Georgia,serif;box-shadow:4px 4px 0 #e6cf8c}
+.b-gold .bic{background:#4a3210;color:#f1c453;border:2px solid #b8892b}
+.b-gold .bt{font-size:16px;font-weight:600}.b-gold .bt b{font-size:26px;font-weight:700;letter-spacing:.5px}
+.b-chalk{background:#f6f6f4;border:2px dashed #9a9a96;color:#3a3a3a;box-shadow:4px 4px 0 #e3e3df}
+.b-chalk .bic{background:#3a3a3a;color:#f6f6f4;border-radius:50%}
+.b-chalk .bt b{font-weight:600;letter-spacing:.3px}
+.b-ent{background:#e4f1dc;border:2px solid #8db47b;color:#29462c;box-shadow:4px 4px 0 #c3d9b7}
+.b-ent .bic{background:#29462c;color:#e4f1dc}
+.b-ent .bt b{font-weight:800}
+.ent-ad>summary{list-style:none}
+.ent-ad>summary::-webkit-details-marker{display:none}
+.ent-details{padding:12px 18px 16px;color:#29462c;background:#f3f8ef;border:1px solid #c3d9b7;border-top:0;border-radius:0 0 12px 12px;font-size:14px;line-height:1.5}
+.ent-details p{margin:0}
+.b-dev{background:var(--peach);color:#fff;border:0;box-shadow:0 4px 0 var(--peach-d)}
+.b-dev .bic{background:#fff;color:var(--peach-d)}
+.contacts{display:none;margin-top:14px;padding:18px;border-radius:16px;background:#fff;border:2px solid var(--peach);text-align:center}
+.contacts.open{display:block}
+.contacts p{margin:0 0 8px;color:var(--soft)}
+.contacts a{display:block;color:var(--peach-d);font-weight:800;text-decoration:none;padding:4px 0;word-break:break-all}
+.empty{text-align:center;color:var(--soft);padding:40px 0;display:none}
+canvas#fx{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:50}
+@media (prefers-reduced-motion:reduce){.inner{transition:none}.greeting{animation:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<canvas id="fx" aria-hidden="true"></canvas>
+<div class="wrap">
+
+  <header>
+    <h1>С Днём учителя!</h1>
+    <p class="greeting">Дорогие учителя, спасибо за ваш труд и вдохновение!</p>
+    <p>Спасибо, что вы верите в нас, терпите наши «ой, забыл тетрадь» и учите не только предметам. Найдите себя и переверните карточку. Выражая безмерную благодарность, Команда разработчиков 11-"Б" класса</p>
+    <div class="party-controls">
+      <button class="party" id="party" type="button">Поздравить всех 🎉</button>
+      <button class="music-stop" id="stopMusic" type="button" hidden>Выключить музыку</button>
+    </div>
+  </header>
+
+  <div class="tools">
+    <input id="q" type="search" placeholder="Найти учителя по имени" aria-label="Поиск по имени" autocomplete="off">
+    <div class="chips" id="chips"></div>
+  </div>
+
+  <main id="list"></main>
+  <p class="empty" id="empty">Никого не нашли. Проверьте написание имени или выберите другой предмет.</p>
+
+  <!-- 3. Блок рекламы (в самом конце) -->
+  <aside class="ads" aria-label="Реклама">
+    <h2>Реклама</h2>
+    <div class="adgrid">
+      <a class="banner b-gold" href="https://t.me/anti_doomer_officiall" target="_blank" rel="noopener">
+        <span class="bic"><img src="assets/icons/antidoomer.jpg" alt="" onerror="this.replaceWith('⚔️')"></span>
+        <span class="bt"><b>AntiDoomer</b>Новый бот в Telegram против прокрастинации. Откроете в Telegram.</span>
+      </a>
+      <details class="ent-ad">
+        <summary class="banner b-ent">
+          <span class="bic" aria-hidden="true">📈</span>
+          <span class="bt"><b>Готовим систему для ЕНТ</b>Нажмите, чтобы узнать о проекте.</span>
+        </summary>
+        <div class="ent-details"><p>Наша команда разрабатывает приложение для подготовки к ЕНТ. В нём можно будет отслеживать прогресс, видеть сильные темы и понимать, что стоит повторить. Скоро расскажем больше.</p></div>
+      </details>
+      <button class="banner b-dev" id="devBtn" type="button" aria-expanded="false" aria-controls="contacts">
+        <span class="bic"><img src="assets/icons/dev.png" alt="" onerror="this.replaceWith('💻')"></span>
+        <span class="bt"><b>Разработка приложений, сайтов и автоматизация бизнеса</b>Нажмите, чтобы увидеть контакты.</span>
+      </button>
+      </div>
+    <div class="contacts" id="contacts">
+      <p>Контакты для заказа:</p>
+      <p>Выражаем огромную благодарность за старания команды разработчиков 11-"Б" класса: Мирахматову Акрому, Мансурову Азизбеку, Юсупжанову Шахрузу, Мирзалиеву Илмазу и Сайдуллаеву Умиду. Если вам также нужен подобный сайт или прочие онлайн услуги, то обращайтесь по контактам ниже. </p>
+      <a href="tel:87066854880">8 706 685 48 80</a>
+      <a href="https://t.me/umnichka20" target="_blank" rel="noopener">@umnichka20</a>
+      <a href="https://t.me/mansuuroov" target="_blank" rel="noopener">@mansuuroov</a>
+      <a href="https://t.me/AKKK09M" target="_blank" rel="noopener">@AKKK09M</a>
+      <a href="https://t.me/Jhki_7" target="_blank" rel="noopener">@Jhki_7</a>
+      <a href="mailto:tamakiamadjiki0110@gmail.com">tamakiamadjiki0110@gmail.com</a>
+    </div>
+  </aside>
+</div>
+
+<script>
+// ===== Данные: n — Имя Фамилия, s — предмет, t — описание, photo — путь к фото =====
+var TEACHERS = [
+ {n:"Мукаддас Сайдикаримовна",s:"Математика",t:"Вы научили нас не бояться сложных задач. Спасибо за терпение!",photo:"assets/photos/mucaddas.jpg"},
+ {n:"Зафар Шухратович",s:"Математика",t:"С вами даже тригонометрия стала понятной. Здоровья и крепких нервов!",photo:"assets/photos/zafar.jpg"},
+ {n:"Барно Сайдахметовна",s:"Русский язык и литература",t:"Благодаря вам мы полюбили читать. Пусть в жизни будет только счастливый финал!",photo:"assets/photos/barno.jpg"},
+ {n:"Максат Арипбаевич",s:"Физика",t:"Вы показали нам, что чудеса объясняются законами. Оставайтесь нашим магом науки!",photo:"assets/photos/maksat.jpg"},
+ {n:"Бекмурод Абдукадирович",s:"Физкультура",t:"Спасибо, что заряжаете энергией и не даёте нам лениться!",photo:"assets/photos/abdukadirovich.jpg"},
+ {n:"Шохиста Гайратовна",s:"Английский язык",t:"Thank you for being our best teacher! Пусть ваша жизнь будет яркой.",photo:"assets/photos/shohista.jpg"},
+ {n:"Мирсобит Миргиязович",s:"История",t:"Вы делаете прошлое живым. Спасибо за ваши рассказы!",photo:"assets/photos/mirsobit.jpg"},
+ {n:"Шохиста Сайдахматовна",s:"Начальные классы",t:"Спасибо вам за то что ввели нас в этот прекрасный мир!",photo:"assets/photos/shohista (2).jpg"},
+ {n:"Шакарбани Жаксыбеккызы",s:"География",t:"С вами мы объездили весь мир, не вставая с парты. Спасибо!",photo:"assets/photos/shakar.jpg"},
+ {n:"Дилфуза Махаматовна",s:"Химия",t:"С вами реакции идут только в нужную сторону. С праздником!",photo:"assets/photos/dilfuza.jpg"},
+ {n:"Азиза Адиловна",s:"Биология",t:"С вами мы узнали, как устроена жизнь. Желаем вам цвести круглый год!",photo:"assets/photos/aziza.jpg"},
+ {n:"Нурмат Сыдыхматвич",s:"Информатика",t:'Вы научили нас, что любая проблема решается алгоритмом.helloWorld("print")',photo:"assets/photos/nurmat.jpg"},
+ {n:"Нодира Арзиметовна",s:"Английский язык",t:"You don’t just teach us English — you inspire us to keep learning.",photo:"assets/photos/4.jpg"},
+ {n:"Зиеда Кочкаровна",s:"История",t:"Ваши уроки — это тот случай, когда историю не просто учишь, а действительно слушаешь с интересом.",photo:"assets/photos/ziyoda.jpg"},
+ {n:"Нозима Уткиршиковна",s:"Английский язык",t:"You make mistakes feel like part of learning rather than something to be afraid of",photo:"assets/photos/nozima.jpg"},
+ {n:"Зиеда Рустамбековна",s:"Английский язык",t:"Your lessons remind us that learning a language is not about being perfect — it’s about making progress",photo:"assets/photos/ziada.jpg"},
+ {n:"Лола Ризаматовна",s:"Начальные классы",t:"Спасибо за то, что именно с вами первые школьные шаги становятся добрыми и запоминающимися",photo:"assets/photos/lola.jpg"},
+ {n:"Икбол Тажибаевна",s:"Начальные классы",t:"Сіздің еңбегіңізді бір ғана сөзбен бағалау қиын. Сізге шын жүректен алғыс айтамыз!",photo:"assets/photos/ikbal.jpg"},
+ {n:"Махира Зулфихаровна",s:"Начальные классы",t:"Сіздің әр сабағыңыздан жаңа біліммен қатар, өзімізге деген сенім де аламыз",photo:"assets/photos/mahira.jpg"},
+ {n:"Дилдора Хамидовна",s:"Начальные классы",t:"Пусть каждое добро, которое вы делаете, возвращается к вам во много раз",photo:"assets/photos/hamidovna.jpg"},
+ {n:"Дилбарай Олджабаевна",s:"Начальные классы",t:"Настоящее наследие учителя — не то, что ученики запомнили, а то, что они смогли благодаря этому сделать",photo:"assets/photos/dilbaray.jpg"},
+ {n:"Дилнора Юлдашбековна",s:"Русский язык и литература",t:"Пусть в вашем жизненном словаре никогда не будет слов “усталость”, “разочарование” и “невозможно",photo:"assets/photos/yuldashbekovna.jpg"},
+ {n:"Дилнавоз Мирхамидовна",s:"Русский язык и литература",t:"Пусть каждый год вашей жизни становится новым прекрасным произведением, а все его главы заканчиваются счастливо",photo:"assets/photos/mirhamidovna.jpg"},
+ {n:"Наргиза Икрамжановна",s:"Начальные классы",t:"Учитель не может прожить жизнь за своего ученика, но может дать ему свет, с которым тот пройдёт свой путь",photo:"assets/photos/ikramjanovna.jpg"},
+ {n:"Нодира Гайратовна",s:"Начальные классы",t:"Учитель однажды входит в жизнь ученика как часть школьного расписания, а спустя годы оказывается частью его воспоминаний и характера",photo:"assets/photos/gairatovna.jpg"},
+ {n:"Гулмира Закировна",s:"Английский язык",t:"Just as great literature leaves a mark on its readers, may your teaching leave a lasting mark on every student",photo:"assets/photos/gulmira.jpg"},
+ {n:"Гулмира Анарматовна",s:"Математика",t:"В математике есть точные ответы, а в жизни — бесценные люди. Спасибо, что вы один из них",photo:"assets/photos/anarmatovna.jpg"},
+ {n:"Карлыгаш Разиковна",s:"Начальные классы",t:"Өміріңізде жақсы сөз көп болсын, жүрегіңізге ауыр сөз жоламасын, ал әр күніңіз қуанышты сөздермен басталсын",photo:"assets/photos/karlygash.jpg"},
+ {n:"Гулбахар Мирзакаримовна",s:"Физика",t:"Сіз бізге ғалам қозғалатын заңдарды үйретесіз, бірақ ең бастысы - әр формуланың артында білуге тұрарлық таңғажайып әлем бар екенін көрсету",photo:"assets/photos/mirzakarimovna.jpg"},
+ {n:"Гуллора Хамидуллаевна",s:"Социологи, психологи, завучи и делопроизводители",t:"Orzularingiz maqsadga, maqsadlaringiz esa go‘zal natijalarga aylansin",photo:"assets/photos/gullora.jpg"},
+ {n:"Мадина Толагановна",s:"Математика",t:"Спасибо за то, что показали: даже самая сложная задача имеет решение, если не сдаваться",photo:"assets/photos/madina.jpg"},
+ {n:"Акмарал Муханкызы",s:"Казахский язык и литература",t:"Сіз сөздің қадірін үйретесіз. Өміріңізде айтылған әрбір жақсы сөз қуаныш пен ізгілік болып өзіңізге қайтсын",photo:"assets/photos/3.jpg"},
+ {n:"Айгерим Болатовна",s:"Казахский язык и литература",t:"Өміріңіз әдеби шығармадай мазмұнды, әр тарауы қуанышты болсын",photo:"assets/photos/aigerim.jpg"},
+ {n:"Нодира Учкуновна",s:"Русский язык и литература",t:"С Днем учителя! Пусть ученики радуют успехами, а работа приносит удовольствие",photo:"assets/photos/nodira.jpg"},
+ {n:"Фарход Искандарович",s:"История",t:"Тарихтағы ең жақсы беттер сияқты, өміріңіздегі әрбір жаңа бет те қуанышқа толы болсын",photo:"assets/photos/farhod.jpg"},
+ {n:"Гулмира Исраиловна",s:"Начальные классы",t:"Благодаря вам мы поняли мир, под названием 'Школа'. Спасибо вам за это!",photo:"assets/photos/gilmirai.jpg"},
+ {n:"Хамид Курванваевич",s:"Художественный труд",t:"Огромное спасибо вам за то что привили к нам любовь к труду",photo:"assets/photos/hamid.jpg"},
+ {n:"Наима Улугбековна",s:"Казахский язык и литература",t:"Өміріңіздегі әрбір сөйлем қуанышпен аяқталып, әрбір жаңа тарау бұрынғысынан да әдемі болсын",photo:"assets/photos/naima.jpg"},
+ {n:"Зулхумор Шайлавовна",s:"Социологи, психологи, завучи и делопроизводители",t:"Өміріңіздегі оқиғалар ең көркем шығармалардағыдай есте қаларлық болсын, бірақ барлық тарауы тек қуанышпен жазылсын",photo:"assets/photos/zulhumor.jpg"},
+ {n:"Мафтуна Мирлазизовна",s:"География",t:"С вашей помощью мы поняли насколько огромен и прекрасен наш мир. Большое вам спасибо за это!",photo:"assets/photos/maftuna.jpg"},
+ {n:"Дона Икрамшиковна",s:"Математика",t:"Желаем, чтобы в уравнении вашей жизни неизвестными оставались только приятные сюрпризы",photo:"assets/photos/dona.jpg"},
+ {n:"Дилнора Ботабаевна",s:"Русский язык и литература",t:"Великие произведения переживают своих авторов, а добрые слова учителя — годы школьной жизни",photo:"assets/photos/botabaevna.jpg"},
+ {n:"Пакиза Боранбаевна",s:"Начальные классы",t:"Детские вопросы иногда сложнее самых серьёзных задач. Пусть вам всегда хватает мудрости, чтобы отвечать на них с улыбкой",photo:"assets/photos/pokiza.jpg"},
+ {n:"Мукаддам Расулматовна",s:"Социологи, психологи, завучи и делопроизводители",t:"Мектеп — тек білім алатын орын емес, түрлі тағдырлар мен мінездер тоғысатын орта. Сол ортаны түсінуге көмектесетініңіз үшін рақмет",photo:"assets/photos/mukaddam.jpg"},
+ {n:"Малика Рустамовна",s:"Казахский язык и литература",t:"Балаға білім беру — тек үйрету емес, оның бойындағы мүмкіндікті байқай білу. Сізге осы қасиетіңіз үшін алғысымыз шексіз",photo:"assets/photos/malikak.jpg"},
+ {n:"Гулнора Ураимовна",s:"Социологи, психологи, завучи и делопроизводители",t:"Мектептегі сан алуан мінездер мен пікірлердің арасынан ортақ түсіністік таба білу — үлкен шеберлік",photo:"assets/photos/gulnorauraimovna.jpg"},
+ {n:"Дилшод Икрамшикович",s:"Начальная военная и техническая подготовка",t:"Вы стали первопричиной зарождени я у нас чувств патриотизма, за что мы варажаем вам огромную благодарность",photo:"assets/photos/dilshodshik.jpg"},
+ {n:"Диера Шукратовна",s:"История",t:"Пусть каждый новый день открывает для вас интересные страницы, а рядом всегда будут благодарные ученики и поводы для гордости.",photo:"assets/photos/diara.jpg"}, 
+ {n:"Нафиса Бахтияровна",s:"Английский язык",t:"May your lessons always be filled with curiosity, bright ideas, and the joy of seeing your students grow.",photo:"assets/photos/nafisaa.jpg"},
+ {n:"Алавхан Шамуратович",s:"Химия",t:"Желаем, чтобы в вашей жизни всегда находилось место для радостных открытий, крепкого здоровья и благодарных учеников.",photo:"assets/photos/olayhan.jpg"},
+ {n:"Дилноза Хавазматовна",s:"Английский язык",t:"May your passion for teaching keep inspiring your students, and may each day bring you joy, appreciation, and new reasons to smile.",photo:"assets/photos/havazmatovna.jpg"},
+ {n:"Рано Ашурматовна",s:"Художественный труд",t:"Пусть в вашей жизни всегда будет место творчеству, добрым улыбкам и радости от успехов ваших учеников.",photo:"assets/photos/raano.jpg"},
+ {n:"Наргиза Романовна",s:"Социологи, психологи, завучи и делопроизводители",t:"Желаем вам чутких и благодарных учеников, сил и вдохновения. Пусть каждый день приносит радость от важного дела, которое вы делаете.",photo:"assets/photos/romanovna.jpg"},
+ {n:"Гулбахор Махлутовна",s:"Социологи, психологи, завучи и делопроизводители",t:"Пусть ваша забота о школьном коллективе возвращается уважением, теплом и благодарностью коллег и учеников. Желаем вам здоровья и благополучия.",photo:"assets/photos/mavlutonna.jpg"},
+]
+// ===== Логика =====
+var list=document.getElementById('list'),chips=document.getElementById('chips'),q=document.getElementById('q'),empty=document.getElementById('empty');
+var active="Все";
+function ini(n){var p=n.split(' ');return (p[0][0]||'')+(p[1]?p[1][0]:'')}
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+function subjects(){var a=[];TEACHERS.forEach(function(t){if(a.indexOf(t.s)<0)a.push(t.s)});return a}
+function drawChips(){
+  chips.innerHTML='';
+  ["Все"].concat(subjects()).forEach(function(s){
+    var b=document.createElement('button');b.type='button';b.className='chip';b.textContent=s;
+    b.setAttribute('aria-pressed',s===active);
+    b.onclick=function(){active=s;drawChips();render()};chips.appendChild(b);
+  });
+}
+function card(t){
+  var front=t.photo?'<img src="'+esc(t.photo)+'" alt="Фото: '+esc(t.n)+'" loading="lazy" onerror="this.outerHTML=\'<div class=ph>'+esc(ini(t.n))+'</div>\'">':'<div class="ph">'+esc(ini(t.n))+'</div>';
+  return '<div class="card" tabindex="0" role="button" aria-pressed="false" aria-label="'+esc(t.n)+', '+esc(t.s)+'. Нажмите, чтобы перевернуть">'+
+  '<div class="inner"><div class="face front">'+front+'</div>'+
+  '<div class="face back"><div class="name">'+esc(t.n)+'</div><div class="subj">'+esc(t.s)+'</div><p>'+esc(t.t)+'</p></div></div></div>';
+}
+function render(){
+  var term=q.value.trim().toLowerCase(),html='',shown=0;
+  subjects().forEach(function(s){
+    if(active!=="Все"&&active!==s)return;
+    var items=TEACHERS.filter(function(t){return t.s===s&&t.n.toLowerCase().indexOf(term)>=0});
+    if(!items.length)return;shown+=items.length;
+    html+='<section class="group"><h2>'+esc(s)+'<small>'+items.length+'</small></h2><div class="grid">'+items.map(card).join('')+'</div></section>';
+  });
+  list.innerHTML=html;empty.style.display=shown?'none':'block';
+}
+function toggle(c){var on=c.classList.toggle('flip');c.setAttribute('aria-pressed',on)}
+list.addEventListener('click',function(e){var c=e.target.closest('.card');if(c)toggle(c)});
+list.addEventListener('keydown',function(e){if((e.key==='Enter'||e.key===' ')&&e.target.classList.contains('card')){e.preventDefault();toggle(e.target)}});
+q.addEventListener('input',render);
+// Конфетти
+var cv=document.getElementById('fx'),cx=cv.getContext('2d'),bits=[],raf=0;
+function size(){cv.width=innerWidth*devicePixelRatio;cv.height=innerHeight*devicePixelRatio}
+size();addEventListener('resize',size);
+var cols=['#f7a072','#e07a4a','#fdc5a5','#f2c94c','#8fc6a8','#f4a6b5','#fff'];
+function burst(){
+  if(matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+  var d=devicePixelRatio,w=cv.width,h=cv.height;
+  for(var i=0;i<150;i++){var left=i%2===0;
+    bits.push({x:left?0:w,y:h*.75,vx:(left?1:-1)*(4+Math.random()*9)*d,vy:-(8+Math.random()*14)*d,
+      r:(4+Math.random()*6)*d,a:Math.random()*6,va:(Math.random()-.5)*.4,c:cols[i%cols.length],life:1})}
+  if(!raf)raf=requestAnimationFrame(tick);
+}
+function tick(){
+  cx.clearRect(0,0,cv.width,cv.height);var g=.35*devicePixelRatio;
+  bits=bits.filter(function(p){p.vy+=g;p.vx*=.99;p.x+=p.vx;p.y+=p.vy;p.a+=p.va;p.life-=.006;return p.life>0&&p.y<cv.height+40});
+  bits.forEach(function(p){cx.save();cx.translate(p.x,p.y);cx.rotate(p.a);cx.globalAlpha=Math.min(1,p.life*2);cx.fillStyle=p.c;cx.fillRect(-p.r/2,-p.r/4,p.r,p.r/2);cx.restore()});
+  raf=bits.length?requestAnimationFrame(tick):0;
+  if(!bits.length)cx.clearRect(0,0,cv.width,cv.height);
+}
+document.getElementById('party').onclick=burst;
+document.getElementById('party').addEventListener('click', playMusic);
+var dv=document.getElementById('devBtn'),ct=document.getElementById('contacts');
+dv.onclick=function(){var o=ct.classList.toggle('open');dv.setAttribute('aria-expanded',o);if(o)ct.scrollIntoView({behavior:'smooth',block:'nearest'})};
+drawChips();render();
+// аудио
+var MUSIC_SRC = "assets/photos/muzika.mp3";  // <-- путь к вашей песне
+var bgMusic = null;
+var stopMusicButton = document.getElementById('stopMusic');
+
+function playMusic() {
+  if (!bgMusic) {
+    bgMusic = new Audio(MUSIC_SRC);
+    bgMusic.loop = false;   // песня играет один раз до конца
+    bgMusic.volume = 1.0;
+    bgMusic.preload = 'auto';
+    bgMusic.onended = function () { stopMusicButton.hidden = true; };
+  }
+  bgMusic.currentTime = 0;  // начинать с начала при каждом клике
+  bgMusic.play().then(function () {
+    if (!bgMusic.paused) stopMusicButton.hidden = false;
+  }).catch(function (err) {
+    console.error('Не удалось воспроизвести музыку:', err);
+  });
+}
+
+stopMusicButton.addEventListener('click', function () {
+  if (bgMusic) {
+    bgMusic.pause();
+    bgMusic.currentTime = 0;
+  }
+  stopMusicButton.hidden = true;
+});
+
+</script>
+</body>
+</html>
